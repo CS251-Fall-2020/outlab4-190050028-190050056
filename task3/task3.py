@@ -10,9 +10,11 @@ args=parser.parse_args()
 img=Image.open(args.infile)
 data=np.asfarray(img)
 data=data/255
-data=data.reshape(512*512, 3)
+a=data.shape[0]
+b=data.shape[1]
+data=data.reshape(a*b, 3)
 centroid, label=cluster.vq.kmeans2(data, minit='++', k=args.k)
 data=[centroid[i] for i in label]
-data=np.array(data).reshape(512,512,3)
+data=np.array(data).reshape(a,b,3)
 im = Image.fromarray((np.ceil( data*255)).astype(np.uint8))
 im.save(args.outfile)
