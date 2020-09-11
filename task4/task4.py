@@ -5,7 +5,7 @@ from mpl_toolkits.mplot3d import axes3d
 from matplotlib import cm
 def fn_plot1d(fn, x_min, x_max, filename):
     func=np.vectorize(fn)
-    x=np.linspace(x_min, x_max, (x_max-x_min)*100+1)
+    x=np.linspace(x_min, x_max, (x_max-x_min)*1000+1)
     plt.figure()
     y=func(x)
     plt.plot(x,y)
@@ -17,8 +17,8 @@ def fn_plot1d(fn, x_min, x_max, filename):
 
 def fn_plot2d(fn, x_min, x_max, y_min, y_max, filename):
     func=np.vectorize(fn)
-    x=np.linspace(x_min, x_max, 100)
-    y=np.linspace(y_min, y_max, 100)
+    x=np.linspace(x_min, x_max, (x_max-x_min)*100)
+    y=np.linspace(y_min, y_max, (y_max-y_min)*100)
     X, Y= np.meshgrid(x, y)
     Z=func(X, Y)
     fig=plt.figure()
@@ -32,7 +32,7 @@ def fn_plot2d(fn, x_min, x_max, y_min, y_max, filename):
 
 def nth_derivative_plotter(fn, n, xmin, xmax, filename):
     func=np.vectorize(fn)
-    x=np.linspace(xmin, xmax, (xmax-xmin)*100+1)
+    x=np.linspace(xmin, xmax, (xmax-xmin)*1000+1)
     y=derivative(func, n=n, x0=x, dx=1e-6)
     plt.figure()
     plt.plot(x,y)
