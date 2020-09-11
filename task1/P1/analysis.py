@@ -7,8 +7,6 @@ ans=np.array([["Field", "Mean", "Std.Dev."]])
 for i in range(len(mean)-1):
     row=[fields[i+1], round(mean[i+1], 3), round(stddev[i+1], 3)]
     ans=np.vstack((ans, row))
-for i in ans:
-    print(*i)
 s = [[str(e) for e in row] for row in ans]
 lens = [max(map(len, col)) for col in zip(*s)]
 fmt = '\t'.join('{{:{}}}'.format(x) for x in lens)
