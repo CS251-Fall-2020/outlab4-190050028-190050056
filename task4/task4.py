@@ -2,6 +2,7 @@ import numpy as np
 from scipy.misc import derivative
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d
+from matplotlib import cm
 def fn_plot1d(fn, x_min, x_max, filename):
     func=np.vectorize(fn)
     x=np.linspace(x_min, x_max, (x_max-x_min)*100+1)
@@ -22,7 +23,7 @@ def fn_plot2d(fn, x_min, x_max, y_min, y_max, filename):
     Z=func(X, Y)
     fig=plt.figure()
     ax = fig.gca(projection='3d')
-    ax.plot_surface(X, Y, Z)
+    ax.plot_surface(X, Y, Z, cmap=cm.coolwarm)
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('fn(x, y)')
