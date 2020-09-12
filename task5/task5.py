@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import math
 
-df=pd.read_csv('case_time_series.csv')
+df=pd.read_csv('https://api.covid19india.org/csv/latest/case_time_series.csv')
 id=df.set_index('Date').index.get_loc('14 April ')
 df=df['Total Deceased'][id:].astype(int)
 days=range(1,df.size)
