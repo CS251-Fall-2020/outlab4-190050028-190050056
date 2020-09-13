@@ -14,7 +14,7 @@ bwd=df[:-1]
 fwd.index=bwd.index=days
 h=fwd/bwd
 slope, intercept, r_value, p_value, std_err=stats.linregress(days, h)
-plt.xlabel('Day no. (since 01 April)')
+plt.xlabel('Day no. (since 15 April)')
 plt.ylabel('H(t)')
 plt.title("A plot of Levitt's metric against days")
 plt.scatter(days, h)

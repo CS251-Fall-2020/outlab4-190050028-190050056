@@ -3,7 +3,7 @@ data = np.genfromtxt("mumbai_data.csv", dtype=float, delimiter=',', skip_header=
 mean=np.mean(data[1:], axis=0)
 stddev=np.std(data[1:], axis=0)
 fields=np.genfromtxt("mumbai_data.csv", dtype=str, delimiter=',')[0]
-ans=np.array([["Field", "Mean", "Std.Dev."]])
+ans=np.array([["Field", "Mean", "Std. Dev."]])
 for i in range(len(mean)-1):
     row=[fields[i+1], str("{:.3f}".format(round(mean[i+1], 3))), str("{:.3f}".format(round(stddev[i+1], 3)))]
     ans=np.vstack((ans, row))
