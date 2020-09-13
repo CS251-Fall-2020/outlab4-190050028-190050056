@@ -1,0 +1,2 @@
+Task1: P1: line10-14
+https://stackoverflow.com/questions/13214809/pretty-print-2d-python-list
